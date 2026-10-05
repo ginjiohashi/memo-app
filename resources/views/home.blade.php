@@ -9,9 +9,20 @@
 
 <body>
     <h1>Memo App</h1>
-<p>シンプルなメモアプリです。</p>
+    <p>シンプルなメモアプリです。</p>
 
+    @auth
+        <p>ログイン中：{{ auth()->user()->name }}</p>
 
+        <form action="/logout" method="POST">
+            @csrf
+            <button type="submit">ログアウト</button>
+        </form>
+    @endauth
+
+    @guest
+        <p>ログインしていません</p>
+    @endguest
 </body>
 
 </html>
