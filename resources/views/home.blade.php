@@ -13,8 +13,9 @@
 
     @auth
         <p>ログイン中：{{ auth()->user()->name }}</p>
+        <a href="{{ route('notes.index') }}">メモ一覧</a>
 
-        <form action="/logout" method="POST">
+        <form action="{{ route('logout') }}" method="POST">
             @csrf
             <button type="submit">ログアウト</button>
         </form>
@@ -22,6 +23,8 @@
 
     @guest
         <p>ログインしていません</p>
+        <a href="{{ route('register') }}">ユーザー登録</a>
+        <a href="{{ route('login') }}">ログイン</a>
     @endguest
 </body>
 
