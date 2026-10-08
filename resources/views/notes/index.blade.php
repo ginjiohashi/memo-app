@@ -13,11 +13,13 @@
     <a href="{{ route('notes.create') }}">新しいメモを作成</a>
 
     @forelse ($notes as $note)
-        <h2>{{ $note->title }}</h2>
+        <a href="{{ route('notes.show', $note) }}">{{ $note->title }}</a>
         <p>{{ $note->content }}</p>
     @empty
         <p>まだメモはありません。</p>
     @endforelse
+
+    <a href="{{ route('home') }}">ホームに戻る</a>
 </body>
 
 </html>

@@ -31,3 +31,19 @@ Route::get('/notes/create', [NoteController::class, 'create'])
 Route::post('/notes', [NoteController::class, 'store'])
     ->middleware('auth')
     ->name('notes.store');
+
+Route::get('/notes/{note}', [NoteController::class, 'show'])
+    ->middleware('auth')
+    ->name('notes.show');
+
+Route::get('/notes/{note}/edit', [NoteController::class, 'edit'])
+    ->middleware('auth')
+    ->name('notes.edit');
+
+Route::put('/notes/{note}', [NoteController::class, 'update'])
+    ->middleware('auth')
+    ->name('notes.update');
+
+Route::delete('/notes/{note}', [NoteController::class, 'destroy'])
+    ->middleware('auth')
+    ->name('notes.destroy');
