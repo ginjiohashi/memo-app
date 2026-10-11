@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 use App\Models\Note;
-
-use function Laravel\Prompts\title;
 
 class NoteController extends Controller
 {
@@ -41,6 +40,8 @@ class NoteController extends Controller
 
     public function show(Note $note)
     {
+        Gate::authorize('view', $note);
+
         return view('notes.show', [
             'note' => $note,
         ]);
@@ -48,13 +49,17 @@ class NoteController extends Controller
 
     public function edit(Note $note)
     {
-        return view('notes/edit', [
+        Gate::authorize('update', $note);
+
+        return view('notes.edit', [
             'note' => $note,
         ]);
     }
 
     public function update(Request $request, Note $note)
     {
+        Gate::authorize('update', $note);
+
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'content' => 'required|string',
@@ -68,6 +73,8 @@ class NoteController extends Controller
 
     public function destroy(Note $note)
     {
+        Gate::authorize('delete', $note);
+
         $note->delete();
         return redirect()->route('notes.index');
     }
