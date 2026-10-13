@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Note;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
-use App\Models\Note;
 
 class NoteController extends Controller
 {
@@ -23,6 +23,7 @@ class NoteController extends Controller
     public function create()
     {
         Gate::authorize('create', Note::class);
+
         return view('notes.create');
     }
 
@@ -72,6 +73,7 @@ class NoteController extends Controller
         $note->title = $validated['title'];
         $note->content = $validated['content'];
         $note->save();
+
         return redirect()->route('notes.show', $note);
     }
 
@@ -80,6 +82,7 @@ class NoteController extends Controller
         Gate::authorize('delete', $note);
 
         $note->delete();
+
         return redirect()->route('notes.index');
     }
 }
