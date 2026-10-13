@@ -16,34 +16,28 @@ Route::middleware('guest')->group(function () {
     Route::post('/login', [LoginController::class, 'store']);
 });
 
-Route::post('/logout', [LoginController::class, 'destroy'])
-    ->middleware('auth')
-    ->name('logout');
+Route::middleware('auth')->group(function () {
+    Route::post('/logout', [LoginController::class, 'destroy'])
+        ->name('logout');
 
-Route::get('/notes', [NoteController::class, 'index'])
-    ->middleware('auth')
-    ->name('notes.index');
+    Route::get('/notes', [NoteController::class, 'index'])
+        ->name('notes.index');
 
-Route::get('/notes/create', [NoteController::class, 'create'])
-    ->middleware('auth')
-    ->name('notes.create');
+    Route::get('/notes/create', [NoteController::class, 'create'])
+        ->name('notes.create');
 
-Route::post('/notes', [NoteController::class, 'store'])
-    ->middleware('auth')
-    ->name('notes.store');
+    Route::post('/notes', [NoteController::class, 'store'])
+        ->name('notes.store');
 
-Route::get('/notes/{note}', [NoteController::class, 'show'])
-    ->middleware('auth')
-    ->name('notes.show');
+    Route::get('/notes/{note}', [NoteController::class, 'show'])
+        ->name('notes.show');
 
-Route::get('/notes/{note}/edit', [NoteController::class, 'edit'])
-    ->middleware('auth')
-    ->name('notes.edit');
+    Route::get('/notes/{note}/edit', [NoteController::class, 'edit'])
+        ->name('notes.edit');
 
-Route::put('/notes/{note}', [NoteController::class, 'update'])
-    ->middleware('auth')
-    ->name('notes.update');
+    Route::put('/notes/{note}', [NoteController::class, 'update'])
+        ->name('notes.update');
 
-Route::delete('/notes/{note}', [NoteController::class, 'destroy'])
-    ->middleware('auth')
-    ->name('notes.destroy');
+    Route::delete('/notes/{note}', [NoteController::class, 'destroy'])
+        ->name('notes.destroy');
+});
