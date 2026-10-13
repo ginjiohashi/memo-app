@@ -10,6 +10,8 @@ class NoteController extends Controller
 {
     public function index(Request $request)
     {
+        Gate::authorize('viewAny', Note::class);
+
         $user = $request->user();
         $notes = $user->notes;
 
@@ -20,11 +22,13 @@ class NoteController extends Controller
 
     public function create()
     {
+        Gate::authorize('create', Note::class);
         return view('notes.create');
     }
 
     public function store(Request $request)
     {
+        Gate::authorize('create', Note::class);
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'content' => 'required|string',
