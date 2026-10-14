@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="ja">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+@section('title', 'メモ一覧')
 
-<body>
+@section('content')
     <h1>メモ一覧</h1>
-
-    <a href="{{ route('notes.create') }}">新しいメモを作成</a>
 
     @forelse ($notes as $note)
         <a href="{{ route('notes.show', $note) }}">{{ $note->title }}</a>
@@ -19,7 +12,4 @@
         <p>まだメモはありません。</p>
     @endforelse
 
-    <a href="{{ route('home') }}">ホームに戻る</a>
-</body>
-
-</html>
+@endsection

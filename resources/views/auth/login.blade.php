@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="ja">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+@section('title', 'ログイン')
 
-<body>
+@section('content')
     <h1>ログイン</h1>
 
-    <form action="/login" method="POST">
+    <form action="{{ route('login.store') }}" method="POST">
         @csrf
 
         <label for="email">メールアドレス</label>
@@ -25,7 +20,4 @@
 
         <button type="submit">ログイン</button>
     </form>
-
-</body>
-
-</html>
+@endsection
