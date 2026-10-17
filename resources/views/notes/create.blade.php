@@ -16,7 +16,12 @@
         @enderror
 
         <label for="content">本文</label>
-        <textarea name="content" id="content">{{ old('content') }}</textarea>
+
+        <textarea name="content" id="content" class="js-content-input">{{ old('content') }}</textarea>
+
+        <p>
+            <span class="js-character-count">0</span>文字
+        </p>
 
         @error('content')
             <p class="error-message">{{ $message }}</p>

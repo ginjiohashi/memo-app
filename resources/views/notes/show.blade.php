@@ -12,7 +12,7 @@
     <div class="note-actions">
         <a href="{{ route('notes.edit', $note) }}" class="button button-primary">編集する</a>
 
-        <form action="{{ route('notes.destroy', $note) }}" method="POST">
+        <form action="{{ route('notes.destroy', $note) }}" method="POST" class="delete-form">
             @csrf
             @method('DELETE')
 
