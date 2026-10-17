@@ -18,14 +18,14 @@
         >
 
         @error('title')
-            <p>{{ $message }}</p>
+            <p class="error-message">{{ $message }}</p>
         @enderror
 
         <label for="content">本文</label>
         <textarea name="content" id="content">{{ old('content', $note->content) }}</textarea>
 
         @error('content')
-            <p>{{ $message }}</p>
+            <p class="error-message">{{ $message }}</p>
         @enderror
 
         <button type="submit">保存</button>

@@ -12,7 +12,7 @@
         <input type="email" name="email" id="email" value="{{ old('email') }}">
 
         @error('email')
-            <p>{{ $message }}</p>
+            <p class="error-message">{{ $message }}</p>
         @enderror
 
         <label for="password">パスワード</label>

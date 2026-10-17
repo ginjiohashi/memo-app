@@ -9,12 +9,14 @@
 
     <a href="{{ route('notes.index') }}">一覧に戻る</a>
 
-    <a href="{{ route('notes.edit', $note) }}">編集する</a>
+    <div class="note-actions">
+        <a href="{{ route('notes.edit', $note) }}" class="button button-primary">編集する</a>
 
-    <form action="{{ route('notes.destroy', $note) }}" method="POST">
-        @csrf
-        @method('DELETE')
+        <form action="{{ route('notes.destroy', $note) }}" method="POST">
+            @csrf
+            @method('DELETE')
 
-        <button type="submit">削除する</button>
-    </form>
+            <button type="submit" class="button button-danger">削除する</button>
+        </form>
+    </div>
 @endsection

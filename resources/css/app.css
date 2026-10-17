@@ -7,3 +7,266 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+
+/* =========================
+   Base
+========================= */
+
+body {
+    background-color: #f5f5f5;
+    color: #222;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    margin-bottom: 16px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+p {
+    line-height: 1.7;
+}
+
+a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   Layout
+========================= */
+
+.container {
+    max-width: 960px;
+    margin: 32px auto;
+    padding: 32px 20px;
+
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   Navigation
+========================= */
+
+.navbar {
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 16px 20px;
+}
+
+.nav-brand {
+    color: #111827;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links button {
+    padding: 0;
+
+    background: none;
+    color: #2563eb;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-links button:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   Home
+========================= */
+
+.home-intro {
+    max-width: 640px;
+}
+
+.welcome-message {
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.home-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.button-secondary {
+    color: #2563eb;
+    background-color: white;
+    border: 1px solid #2563eb;
+}
+
+.button-secondary:hover {
+    background-color: #eff6ff;
+    text-decoration: none;
+}
+
+/* =========================
+   Forms
+========================= */
+
+main form {
+    max-width: 560px;
+}
+
+main label {
+    display: block;
+
+    margin-top: 16px;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+main input,
+main textarea {
+    width: 100%;
+    padding: 10px 12px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+}
+
+main input:focus,
+main textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+main textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+main button {
+    margin-top: 20px;
+    padding: 10px 20px;
+
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+main button:hover {
+    background-color: #1d4ed8;
+}
+
+.error-message {
+    margin-top: 6px;
+
+    color: #dc2626;
+    font-size: 14px;
+}
+
+
+/* =========================
+   Buttons
+========================= */
+
+.button {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button-primary {
+    background-color: #2563eb;
+    color: white;
+}
+
+.button-primary:hover {
+    background-color: #1d4ed8;
+    text-decoration: none;
+}
+
+.button-danger {
+    background-color: #dc2626;
+    color: white;
+}
+
+.button-danger:hover {
+    background-color: #b91c1c;
+}
+
+.create-note-button {
+    margin-bottom: 20px;
+    padding: 8px 14px;
+    font-size: 14px;
+}
+
+
+/* =========================
+   Notes
+========================= */
+
+.note-card {
+    margin-bottom: 16px;
+    padding: 20px;
+
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.note-card:hover {
+    background-color: #f9f9fb;
+}
+
+.note-card p {
+    color: #4b5563;
+}
+
+.note-title {
+    display: inline-block;
+
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.note-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+.note-actions form {
+    margin: 0;
+}
+
+.note-actions button {
+    margin-top: 0;
+}
